@@ -12,7 +12,9 @@ app.use(cors(
     }
     
 ))
-mongoose.connect('mongodb+srv://jigneshsharma9868:AkONuVfT0VTg4JNq@cluster0.hu1lbos.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(
+  "mongodb+srv://jigneshsharma9868:JxZ8CxkSw7msVuhV@cluster0.6180gwf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+);
 const Vote = mongoose.model('Vote', {option : String});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
