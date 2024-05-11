@@ -12,7 +12,7 @@ app.use(cors(
     }
     
 ))
-mongoose.connect('mongodb://localhost:27017/voting');
+mongoose.connect('mongodb+srv://jigneshsharma9868:AkONuVfT0VTg4JNq@cluster0.hu1lbos.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 const Vote = mongoose.model('Vote', {option : String});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
