@@ -26,7 +26,7 @@ function App() {
       return;
     }
     try {
-      await axios.post(`${window.location.origin}/submit`, { option });
+      await axios.post("vottingsystem-api-server.vercel.app/submit", { option });
       fetchResults();
       setShowResults(true);
     } catch (error) {
@@ -36,7 +36,7 @@ function App() {
 
   const fetchResults = async () => {
     try {
-      const response = await axios.get(`${window.location.origin}/results`);
+      const response = await axios.get("vottingsystem-api-server.vercel.app/results");
       setTotalResponses(response.data.total);
       setOption1Responses(response.data.results["Option 1"] || 0);
       setOption2Responses(response.data.results["Option 2"] || 0);
