@@ -4,7 +4,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const port = 3001;
-app.use(cors())
+app.use(cors(
+    {
+     origin : [],
+    methods : ["POST", "GET"],
+   credentials : true
+    }
+    
+))
 mongoose.connect('mongodb://localhost:27017/voting');
 const Vote = mongoose.model('Vote', {option : String});
 app.use(bodyParser.urlencoded({extended: true}));
