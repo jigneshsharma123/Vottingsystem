@@ -26,7 +26,7 @@ function App() {
       return;
     }
     try {
-      await axios.post("vottingsystem-api-server.vercel.app/submit", { option });
+      await axios.post("http://localhost:3001/submit", { option });
       fetchResults();
       setShowResults(true);
     } catch (error) {
@@ -36,7 +36,7 @@ function App() {
 
   const fetchResults = async () => {
     try {
-      const response = await axios.get("vottingsystem-api-server.vercel.app/results");
+      const response = await axios.get("http://localhost:3001/results");
       setTotalResponses(response.data.total);
       setOption1Responses(response.data.results["Option 1"] || 0);
       setOption2Responses(response.data.results["Option 2"] || 0);
@@ -54,7 +54,7 @@ function App() {
       }}
     >
       <h2 style={{ color: "#333", marginBottom: "10px" }}>
-        Are you a Vegetarian or Non-Vegetarian?
+        Vote for  Your fav Programming Language.
       </h2>
       <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: "20px" }}>
@@ -67,7 +67,7 @@ function App() {
             style={{ marginRight: "10px" }}
           />
           <label htmlFor="option1" style={{ marginRight: "10px" }}>
-            Vegetarian
+            JAVA
           </label>
         </div>
         <div>
@@ -80,7 +80,7 @@ function App() {
             style={{ marginRight: "10px" }}
           />
           <label htmlFor="option2" style={{ marginRight: "10px" }}>
-            Non-Vegetarian
+            C++
           </label>
         </div>
         <button
@@ -107,10 +107,10 @@ function App() {
             Total Responses - {totalResponses}
           </p>
           <p style={{ marginBottom: "5px" }}>
-            Responses for Option 1 - {option1Responses}
+            Responses for JAVA - {option1Responses}
           </p>
           <p style={{ marginBottom: "5px" }}>
-            Responses for Option 2 - {option2Responses}
+            Responses for C++ - {option2Responses}
           </p>
         </>
       )}
